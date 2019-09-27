@@ -2,9 +2,19 @@
 
 void quadro(int n)
 {
-	for (int i = 0; i < n; i++)
+	/*
+	for (int i = 0; i*i < n; i++)
 	{
 		std::cout << i + 1 << " ^ 2 = " << i * i + 2 * i + 1 << std::endl;
+	}
+	*/
+
+	int a = 1, i = 1;
+	while (a <= n)
+	{
+		std::cout << i << " ^ 2 = " << a << std::endl;
+		a = a + i + i + 1;
+		i++;
 	}
 }
 
