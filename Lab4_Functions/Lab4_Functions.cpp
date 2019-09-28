@@ -9,7 +9,7 @@ void quadro(int n)
 	}
 	*/
 
-	int a = 1, i = 1;
+	int a = 0, i = 0;
 	while (a <= n)
 	{
 		std::cout << i << " ^ 2 = " << a << std::endl;
