@@ -17,7 +17,7 @@ void arrcin1(int* mas)
 	}
 }
 
-void arrprint2(int* mas)
+void arrprint1(int* mas)
 {
 	for (int i = 0; i < 26; i++)
 		for (int j = 0; j < mas[i]; j++)
@@ -79,7 +79,7 @@ void task1()
 
 	std::cout << "Отсортированный массив: " << std::endl;
 
-	arrprint2(mas);
+	arrprint1(mas);
 }
 
 //ЗАДАНИЕ 2.
