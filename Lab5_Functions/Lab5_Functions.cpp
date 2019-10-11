@@ -17,6 +17,7 @@ void arrcin1(int* mas)
 	}
 }
 
+//Вывод массива Задание 1.
 void arrprint1(int* mas)
 {
 	for (int i = 0; i < 26; i++)
