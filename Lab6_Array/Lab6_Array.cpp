@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿
+#include <iostream>
 #include <locale.h> 
 #include <algorithm>
 
@@ -67,20 +68,30 @@ void sum(int*& matrix_1, int*& matrix_2, int*& matrix_result, int * columns_1, i
 	}
 }
 
-//работает неправильно, т.к. запутался в одномерном массиве...
+//не работает...
 void multiple(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* columns_1, int* columns_2, int* columns_result, int* rows_1, int* rows_2, int* rows_result)
 {
 	if (*columns_1 == *rows_2)
 	{
-		matrix_result = new int[(*rows_2) * (*columns_1)];
-		*rows_result = *rows_2;
-		*columns_result = *columns_1;
-
+		*rows_result = *rows_1;
+		*columns_result = *columns_2;
+		
+		matrix_result = new int[(*rows_result) * (*columns_result)];
 		for (int i = 0; i < (*rows_result) * (*columns_result); i++)
-		{
 			matrix_result[i] = 0;
+
+		for (int i = 0; i < *rows_1; i++)
+		{
+			for (int j = 0; j < *rows_1; j++)
+			{
+				for (int k = 0; k < *rows_1; k++)
+				{
+					matrix_result[i * (*rows_1) + j] += matrix_1[i * (*rows_1) + k] * matrix_2[k * (*rows_1) + j];
+				}
+			}
 		}
 
+/*
 		for (int i = 0; i < (*rows_2) * (*columns_1); i++)
 		{
 			std::cout << "i= " << i << std::endl;
@@ -94,6 +105,7 @@ void multiple(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* columns_
 				}
 			}
 		}
+*/
 		matrix_output(matrix_result, *rows_result, *columns_result);
 
 		delete[] matrix_result;
@@ -165,8 +177,8 @@ void track(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* columns_1, 
 		if (*rows_1 == *columns_1)
 		{
 			for (int i = 0; i < *rows_1; i++)
-				track_result += matrix_1[i];
-			std::cout << "След матрицы: " << track_result << std::endl;
+				track_result += matrix_1[i * (*columns_1)];
+			std::cout << "След матрицы: " << track_result << std::endl;			
 		}
 		else
 		{
@@ -177,7 +189,7 @@ void track(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* columns_1, 
 		if (*rows_2 == *columns_2)
 		{
 			for (int i = 0; i < *rows_2; i++)
-				track_result += matrix_2[i];
+				track_result += matrix_2[i*(*columns_2)];
 			std::cout << "След матрицы: " << track_result << std::endl;
 		}
 		else
