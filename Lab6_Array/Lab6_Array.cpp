@@ -68,7 +68,6 @@ void sum(int*& matrix_1, int*& matrix_2, int*& matrix_result, int * columns_1, i
 	}
 }
 
-//не работает...
 void multiple(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* columns_1, int* columns_2, int* columns_result, int* rows_1, int* rows_2, int* rows_result)
 {
 	if (*columns_1 == *rows_2)
@@ -92,21 +91,6 @@ void multiple(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* columns_
 			}
 		}
 
-/*
-		for (int i = 0; i < (*rows_2) * (*columns_1); i++)
-		{
-			std::cout << "i= " << i << std::endl;
-			for (int j = i % *columns_1; j < *columns_2; j++)
-			{
-				std::cout << "j= " << j << std::endl;
-				for (int q = i % *rows_2; q < *rows_1; q++)
-				{
-					std::cout << "q= " << q << std::endl;
-					matrix_result[i] += matrix_1[j] * matrix_2[q];
-				}
-			}
-		}
-*/
 		matrix_output(matrix_result, *rows_result, *columns_result);
 
 		delete[] matrix_result;
@@ -159,7 +143,6 @@ void multiple_on_number(int*& matrix_1, int*& matrix_2, int*& matrix_result, int
 	}
 }
 
-//не имею ни малейшего представления как находить определитель в одномерном массиве
 void determinant(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* rows_1, int* rows_2, int* columns_1, int* columns_2)
 {
 
