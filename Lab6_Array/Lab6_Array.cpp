@@ -80,13 +80,14 @@ void multiple(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* columns_
 		for (int i = 0; i < (*rows_result) * (*columns_result); i++)
 			matrix_result[i] = 0;
 
-		for (int i = 0; i < *rows_1; i++)
+		for (int i = 0; i < *rows_result; i++)
 		{
-			for (int j = 0; j < *rows_1; j++)
+			for (int j = 0; j < *columns_result; j++)
 			{
-				for (int k = 0; k < *rows_1; k++)
+				matrix_result[i * (*columns_result) + j] = 0;
+				for (int k = 0; k < *columns_1; k++)
 				{
-					matrix_result[i * (*rows_1) + j] += matrix_1[i * (*rows_1) + k] * matrix_2[k * (*rows_1) + j];
+					matrix_result[i * (*columns_result) + j] += matrix_1[i * (*columns_1) + k] * matrix_2[k * (*columns_2) + j];
 				}
 			}
 		}
