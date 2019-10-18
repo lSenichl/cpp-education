@@ -147,3 +147,41 @@ matrix matrix::multiple_on_number(matrix matrtemp1, matrix matrtemp2)
 		std::cout << "Invalid." << std::endl;
 	}
 }
+
+matrix matrix::track(matrix matrtemp1, matrix matrtemp2)
+{
+	std::cout << "Number of matrix: " << std::endl;
+	int matrix_number;
+	std::cin >> matrix_number;
+	int track_result = 0;
+
+	switch (matrix_number)
+	{
+	case 1:
+		if (matrtemp1.rows == matrtemp1.columns)
+		{
+			for (int i = 0; i < matrtemp1.rows; i++)
+				track_result += matrtemp1.matr[i * (matrtemp1.columns)];
+			std::cout << "Track: " << track_result << std::endl;
+		}
+		else
+		{
+			std::cout << "Invalid. " << std::endl;
+		}
+		break;
+	case 2:
+		if (matrtemp2.rows == matrtemp2.columns)
+		{
+			for (int i = 0; i < matrtemp2.rows; i++)
+				track_result += matrtemp2.matr[i * (matrtemp2.columns)];
+			std::cout << "Track: " << track_result << std::endl;
+		}
+		else
+		{
+			std::cout << "Invalid. " << std::endl;
+		}
+		break;
+	default:
+		std::cout << "Invalid." << std::endl;
+	}
+}
