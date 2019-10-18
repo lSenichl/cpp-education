@@ -109,3 +109,41 @@ matrix matrix::multiple(matrix matrtemp1, matrix matrtemp2)
 		std::cout << "Invalid." << std::endl;
 	}
 }
+
+matrix matrix::multiple_on_number(matrix matrtemp1, matrix matrtemp2)
+{
+	std::cout << "Введите число, на которое необходимо умножить матрицу: " << std::endl;
+	int matrix_q;
+	std::cin >> matrix_q;
+	std::cout << "Введите номер матрицы, которую необходимо умножить на число: " << std::endl;
+	int matrix_number;
+	std::cin >> matrix_number;
+
+	switch (matrix_number)
+	{
+	case 1:
+		rows = matrtemp1.rows;
+		columns = matrtemp1.columns;
+
+		matr = new int[rows * columns];
+
+		for (int i = 0; i < rows * columns; i++)
+			matr[i] = matrtemp1.matr[i] * matrix_q;
+
+		return matrix(rows, columns, matr);
+		break;
+	case 2:
+		rows = matrtemp2.rows;
+		columns = matrtemp2.columns;
+
+		matr = new int[rows * columns];
+
+		for (int i = 0; i < rows * columns; i++)
+			matr[i] = matrtemp2.matr[i] * matrix_q;
+
+		return matrix(rows, columns, matr);
+		break;
+	default:
+		std::cout << "Введён неверный номер матрицы. Завершение программы." << std::endl;
+	}
+}

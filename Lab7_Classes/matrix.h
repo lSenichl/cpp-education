@@ -17,6 +17,8 @@ public:
 
 	matrix multiple(matrix matrtemp1, matrix matrtemp2);
 
+	matrix multiple_on_number(matrix matrtemp1, matrix matrtemp2);
+
 protected:
 	int rows;
 	int columns;
