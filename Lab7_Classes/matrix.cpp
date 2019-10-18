@@ -68,7 +68,7 @@ matrix matrix::sum(matrix matrtemp1, matrix matrtemp2)
 		columns = matrtemp1.columns;
 		matr = new int[rows * columns];
 		for (int i = 0; i < rows * columns; i++)
-			matr[i] = matr[i] + matr[i];
+			matr[i] = matrtemp2.matr[i] + matrtemp1.matr[i];
 		return matrix(rows,columns,matr);
 	}
 	else
