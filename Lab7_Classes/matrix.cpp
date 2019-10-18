@@ -112,10 +112,10 @@ matrix matrix::multiple(matrix matrtemp1, matrix matrtemp2)
 
 matrix matrix::multiple_on_number(matrix matrtemp1, matrix matrtemp2)
 {
-	std::cout << "Введите число, на которое необходимо умножить матрицу: " << std::endl;
+	std::cout << "Multiplier: " << std::endl;
 	int matrix_q;
 	std::cin >> matrix_q;
-	std::cout << "Введите номер матрицы, которую необходимо умножить на число: " << std::endl;
+	std::cout << "Number of matrix: " << std::endl;
 	int matrix_number;
 	std::cin >> matrix_number;
 
@@ -144,6 +144,6 @@ matrix matrix::multiple_on_number(matrix matrtemp1, matrix matrtemp2)
 		return matrix(rows, columns, matr);
 		break;
 	default:
-		std::cout << "Введён неверный номер матрицы. Завершение программы." << std::endl;
+		std::cout << "Invalid." << std::endl;
 	}
 }
