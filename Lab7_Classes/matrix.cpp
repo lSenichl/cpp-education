@@ -45,11 +45,11 @@ void matrix::print()
 
 void matrix::input()
 {
-	std::cout << "Введите кол-во строк: " << std::endl;
+	std::cout << "Rows: " << std::endl;
 	std::cin >> rows;
-	std::cout << "Введите кол-во столбцов: " << std::endl;
+	std::cout << "Columns: " << std::endl;
 	std::cin >> columns;
-	std::cout << "Введите элементы матрицы: " << std::endl;
+	std::cout << "Matrix: " << std::endl;
 	matr = new int[rows * columns];
 	for (int i = 0; i < rows; i++)
 	{
@@ -73,6 +73,6 @@ matrix matrix::sum(matrix matrtemp1, matrix matrtemp2)
 	}
 	else
 	{
-		std::cout << "Матрицы имеют разную размерность. Операция не может быть выполнена. Завершение программы." << std::endl;
+		std::cout << "Invalid." << std::endl;
 	}
 }
