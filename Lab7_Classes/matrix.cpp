@@ -148,7 +148,7 @@ matrix matrix::multiple_on_number(matrix matrtemp1, matrix matrtemp2)
 	}
 }
 
-matrix matrix::track(matrix matrtemp1, matrix matrtemp2)
+void matrix::track(matrix matrtemp1, matrix matrtemp2)
 {
 	std::cout << "Number of matrix: " << std::endl;
 	int matrix_number;
@@ -161,7 +161,7 @@ matrix matrix::track(matrix matrtemp1, matrix matrtemp2)
 		if (matrtemp1.rows == matrtemp1.columns)
 		{
 			for (int i = 0; i < matrtemp1.rows; i++)
-				track_result += matrtemp1.matr[i * (matrtemp1.columns)];
+				track_result += matrtemp1.matr[i * (matrtemp1.columns) + i];
 			std::cout << "Track: " << track_result << std::endl;
 		}
 		else
@@ -173,7 +173,7 @@ matrix matrix::track(matrix matrtemp1, matrix matrtemp2)
 		if (matrtemp2.rows == matrtemp2.columns)
 		{
 			for (int i = 0; i < matrtemp2.rows; i++)
-				track_result += matrtemp2.matr[i * (matrtemp2.columns)];
+				track_result += matrtemp2.matr[i * (matrtemp2.columns) + i];
 			std::cout << "Track: " << track_result << std::endl;
 		}
 		else

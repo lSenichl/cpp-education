@@ -189,7 +189,7 @@ void track(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* columns_1, 
 		if (*rows_1 == *columns_1)
 		{
 			for (int i = 0; i < *rows_1; i++)
-				track_result += matrix_1[i * (*columns_1)];
+				track_result += matrix_1[i * (*columns_1) + i];
 			std::cout << "След матрицы: " << track_result << std::endl;			
 		}
 		else
@@ -201,7 +201,7 @@ void track(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* columns_1, 
 		if (*rows_2 == *columns_2)
 		{
 			for (int i = 0; i < *rows_2; i++)
-				track_result += matrix_2[i*(*columns_2)];
+				track_result += matrix_2[i*(*columns_2) + i];
 			std::cout << "След матрицы: " << track_result << std::endl;
 		}
 		else

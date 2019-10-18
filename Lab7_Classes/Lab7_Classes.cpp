@@ -15,12 +15,12 @@ int main()
 	
 	matrix resmatr;
 	
-	std::cout << "Введите номер необходимой операции: \n"
-		<< "1. Сложение двух матриц. \n"
-		<< "2. Ужножение двух матриц. \n"
-		<< "3. Умножение одной матрицы на число. \n"
-		<< "4. Нахождение обределителя. \n"
-		<< "5. Нахождение следа. \n" << std::endl;
+	std::cout << "Number of operation: \n"
+		<< "1. Sum. \n"
+		<< "2. Multiple. \n"
+		<< "3. Multiple on number. \n"
+		<< "4. Determinant (dont work). \n"
+		<< "5. Track. \n" << std::endl;
 
 	int task_number = 0;
 
@@ -32,20 +32,21 @@ int main()
 	{
 	case 1:
 		resmatr.sum(matr1, matr2);
+		resmatr.print();
 		break;
 	case 2:
 		resmatr.multiple(matr1, matr2);
+		resmatr.print();
 		break;
 	case 3:
 		resmatr.multiple_on_number(matr1, matr2);
+		resmatr.print();
 		break;
 	case 4:
 		//resmatr.determinant;
 		break;
 	case 5:
-		//resmatr.track;
+		resmatr.track(matr1, matr2);
 		break;
 	}
-
-	resmatr.print();
  }
