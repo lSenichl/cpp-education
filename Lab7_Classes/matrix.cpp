@@ -60,23 +60,7 @@ void matrix::input()
 	}
 }
 
-matrix matrix::sum(matrix matrtemp1)
-{
-	if (rows == matrtemp1.rows && columns == matrtemp1.columns)
-	{
-		matrix tmatr;
-		tmatr.matr = new int[rows * matrtemp1.columns];
-		for (int i = 0; i < rows * columns; i++)
-			matr[i] = matr[i] + matrtemp1.matr[i];
-		return matrix(rows,columns,matr);
-	}
-	else
-	{
-		std::cout << "Матрицы имеют разную размерность. Операция не может быть выполнена. Завершение программы." << std::endl;
-	}
-}
-
-matrix matrix::sum2(matrix matrtemp1, matrix matrtemp2)
+matrix matrix::sum(matrix matrtemp1, matrix matrtemp2)
 {
 	if (matrtemp1.rows == matrtemp2.rows && matrtemp1.columns == matrtemp2.columns)
 	{
