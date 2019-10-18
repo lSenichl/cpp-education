@@ -16,5 +16,9 @@ int main()
 	matrix resmatr;
 	resmatr.sum(matr1, matr2);
 	resmatr.print();
+
+	matrix resmatr2;
+	resmatr2.multiple(matr1, matr2);
+	resmatr2.print();
 	
  }

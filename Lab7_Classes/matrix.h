@@ -15,6 +15,8 @@ public:
 
 	matrix sum(matrix matrtemp1, matrix matrtemp2);
 
+	matrix multiple(matrix matrtemp1, matrix matrtemp2);
+
 protected:
 	int rows;
 	int columns;

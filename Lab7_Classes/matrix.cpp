@@ -77,7 +77,35 @@ matrix matrix::sum(matrix matrtemp1, matrix matrtemp2)
 	}
 }
 
-//matrix matrix::multiple(matrix matrtemp1, matrix matrtemp2)
-//{
-//
-//}
+matrix matrix::multiple(matrix matrtemp1, matrix matrtemp2)
+{
+	if (matrtemp1.columns == matrtemp2.rows)
+	{
+		rows = matrtemp1.rows;
+		columns = matrtemp2.columns;
+
+		std::cout << rows << " " << columns << std::endl;
+
+		matr = new int[(rows) * (columns)];
+		for (int i = 0; i < (rows) * (columns); i++)
+			matr[i] = 0;
+
+		for (int i = 0; i < rows; i++)
+		{
+			for (int j = 0; j < columns; j++)
+			{
+				matr[i * columns + j] = 0;
+				for (int k = 0; k < matrtemp1.columns; k++)
+				{
+					matr[i * (columns) + j] += matrtemp1.matr[i * matrtemp1.columns + k] * matrtemp2.matr[k * columns + j];
+				}
+			}
+		}
+
+		return matrix(rows, columns, matr);
+	}
+	else
+	{
+		std::cout << "Invalid." << std::endl;
+	}
+}
