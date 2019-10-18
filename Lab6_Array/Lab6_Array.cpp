@@ -145,7 +145,35 @@ void multiple_on_number(int*& matrix_1, int*& matrix_2, int*& matrix_result, int
 
 void determinant(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* rows_1, int* rows_2, int* columns_1, int* columns_2)
 {
+	std::cout << "Введите номер матрицы, определитель которой необходимо найти: " << std::endl;
+	int matrix_number;
+	std::cin >> matrix_number;
 
+	switch (matrix_number)
+	{
+	case 1:
+		if (*rows_1 = *columns_1)
+		{
+
+		}
+		else
+		{
+			std::cout << "Матрица имеет отличную от квадратной форму. Действие невозможно. Завершение прграммы. " << std::endl;
+		}
+		break;
+	case 2:
+		if (*rows_2 = *columns_2)
+		{
+
+		}
+		else
+		{
+			std::cout << "Матрица имеет отличную от квадратной форму. Действие невозможно. Завершение прграммы. " << std::endl;
+		}
+		break;
+	default:
+		std::cout << "Введён неверный номер матрицы. Завершение программы." << std::endl;
+	}
 }
 
 void track(int*& matrix_1, int*& matrix_2, int*& matrix_result, int* columns_1, int* columns_2, int* columns_result, int* rows_1, int* rows_2, int* rows_result)
