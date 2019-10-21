@@ -10,17 +10,17 @@ matrix::~matrix()
 {
 }
 
-int matrix::getrows()
+const int matrix::getrows()
 {
 	return rows;
 }
 
-int matrix::getcolumns()
+const int matrix::getcolumns()
 {
 	return columns;
 }
 
-int* matrix::getmatr()
+const int* matrix::getmatr()
 {
 	return matr;
 }

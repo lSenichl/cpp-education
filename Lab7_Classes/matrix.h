@@ -15,9 +15,9 @@ public:
 	void print();
 	void input();
 
-	int getrows();
-	int getcolumns();
-	int * getmatr();
+	const int getrows();
+	const int getcolumns();
+	const int * getmatr();
 
 	matrix sum(matrix matrtemp1, matrix matrtemp2);
 
