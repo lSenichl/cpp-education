@@ -49,31 +49,29 @@ void matrix::input()
 			std::cin >> matr[i * columns + j];
 		}
 	}
+	std::cout << std::endl;
 }
 
 void matrix::print()
 {
 	if ((columns != 0) && (rows != 0))
 	{
-		//std::cout << "Entered matrix: " << std::endl;
-		
 		for (int i = 0; i < rows; i++)
 		{
 			for (int j = 0; j < columns; j++)
 				std::cout << matr[i * columns + j] << " ";
 			std::cout << std::endl;
 		}
-
 		std::cout << std::endl;
 	}
 }
 
 matrix matrix::sum(matrix matrtemp1, matrix matrtemp2)
 {
-	if (matrtemp1.rows == matrtemp2.rows && matrtemp1.columns == matrtemp2.columns)
+	if (matrtemp1.getrows() == matrtemp2.getrows() && matrtemp1.getcolumns() == matrtemp2.getcolumns())
 	{
-		rows = matrtemp1.rows;
-		columns = matrtemp1.columns;
+		rows = matrtemp1.getrows();
+		columns = matrtemp1.getcolumns();
 		matr = new int[rows * columns];
 		for (int i = 0; i < rows * columns; i++)
 			matr[i] = matrtemp2.matr[i] + matrtemp1.matr[i];
@@ -88,12 +86,10 @@ matrix matrix::sum(matrix matrtemp1, matrix matrtemp2)
 
 matrix matrix::multiple(matrix matrtemp1, matrix matrtemp2)
 {
-	if (matrtemp1.columns == matrtemp2.rows)
+	if (matrtemp1.getcolumns() == matrtemp2.getrows())
 	{
-		rows = matrtemp1.rows;
-		columns = matrtemp2.columns;
-
-		//std::cout << rows << " " << columns << std::endl;
+		rows = matrtemp1.getrows();
+		columns = matrtemp2.getcolumns();
 
 		matr = new int[(rows) * (columns)];
 		for (int i = 0; i < (rows) * (columns); i++)
@@ -104,13 +100,12 @@ matrix matrix::multiple(matrix matrtemp1, matrix matrtemp2)
 			for (int j = 0; j < columns; j++)
 			{
 				matr[i * columns + j] = 0;
-				for (int k = 0; k < matrtemp1.columns; k++)
+				for (int k = 0; k < matrtemp1.getcolumns(); k++)
 				{
-					matr[i * (columns) + j] += matrtemp1.matr[i * matrtemp1.columns + k] * matrtemp2.matr[k * columns + j];
+					matr[i * (columns) + j] += matrtemp1.getmatr()[i * matrtemp1.getcolumns() + k] * matrtemp2.getmatr()[k * columns + j];
 				}
 			}
 		}
-
 		return matrix(rows, columns, matr);
 	}
 	else
@@ -132,24 +127,24 @@ matrix matrix::multiple_on_number(matrix matrtemp1, matrix matrtemp2)
 	switch (matrix_number)
 	{
 	case 1:
-		rows = matrtemp1.rows;
-		columns = matrtemp1.columns;
+		rows = matrtemp1.getrows();
+		columns = matrtemp1.getcolumns();
 
 		matr = new int[rows * columns];
 
 		for (int i = 0; i < rows * columns; i++)
-			matr[i] = matrtemp1.matr[i] * matrix_q;
+			matr[i] = matrtemp1.getmatr()[i] * matrix_q;
 
 		return matrix(rows, columns, matr);
 		break;
 	case 2:
-		rows = matrtemp2.rows;
-		columns = matrtemp2.columns;
+		rows = matrtemp2.getrows();
+		columns = matrtemp2.getcolumns();
 
 		matr = new int[rows * columns];
 
 		for (int i = 0; i < rows * columns; i++)
-			matr[i] = matrtemp2.matr[i] * matrix_q;
+			matr[i] = matrtemp2.getmatr()[i] * matrix_q;
 
 		return matrix(rows, columns, matr);
 		break;
@@ -169,10 +164,10 @@ void matrix::track(matrix matrtemp1, matrix matrtemp2)
 	switch (matrix_number)
 	{
 	case 1:
-		if (matrtemp1.rows == matrtemp1.columns)
+		if (matrtemp1.getrows() == matrtemp1.getcolumns())
 		{
-			for (int i = 0; i < matrtemp1.rows; i++)
-				track_result += matrtemp1.matr[i * (matrtemp1.columns) + i];
+			for (int i = 0; i < matrtemp1.getrows(); i++)
+				track_result += matrtemp1.getmatr()[i * (matrtemp1.getcolumns()) + i];
 			std::cout << "Track: " << track_result << std::endl;
 		}
 		else
@@ -181,10 +176,10 @@ void matrix::track(matrix matrtemp1, matrix matrtemp2)
 		}
 		break;
 	case 2:
-		if (matrtemp2.rows == matrtemp2.columns)
+		if (matrtemp2.getrows() == matrtemp2.getcolumns())
 		{
-			for (int i = 0; i < matrtemp2.rows; i++)
-				track_result += matrtemp2.matr[i * (matrtemp2.columns) + i];
+			for (int i = 0; i < matrtemp2.getrows(); i++)
+				track_result += matrtemp2.getmatr()[i * (matrtemp2.getcolumns()) + i];
 			std::cout << "Track: " << track_result << std::endl;
 		}
 		else
