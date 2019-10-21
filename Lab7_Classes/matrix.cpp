@@ -10,6 +10,21 @@ matrix::~matrix()
 {
 }
 
+int matrix::getrows()
+{
+	return rows;
+}
+
+int matrix::getcolumns()
+{
+	return columns;
+}
+
+int* matrix::getmatr()
+{
+	return matr;
+}
+
 matrix::matrix(int trows, int tcolumns, int* tmatr)
 {
 	rows = trows;
@@ -19,37 +34,13 @@ matrix::matrix(int trows, int tcolumns, int* tmatr)
 		matr[i] = tmatr[i];
 }
 
-void matrix::print()
-{
-	std::cout << "Полученная матрица: " << std::endl;
-	if (columns > rows)
-	{
-		for (int i = 0; i < rows; i++)
-		{
-			for (int j = 0; j < columns; j++)
-				std::cout << matr[i * columns + j] << " ";
-			std::cout << std::endl;
-		}
-	}
-	else
-	{
-		for (int i = 0; i < rows; i++)
-		{
-			for (int j = 0; j < columns; j++)
-				std::cout << matr[i * columns + j] << " ";
-			std::cout << std::endl;
-		}
-	}
-	std::cout << std::endl;
-}
-
 void matrix::input()
 {
-	std::cout << "Rows: " << std::endl;
+	std::cout << "Number of rows: ";
 	std::cin >> rows;
-	std::cout << "Columns: " << std::endl;
+	std::cout << "Number of columns: ";
 	std::cin >> columns;
-	std::cout << "Matrix: " << std::endl;
+	std::cout << "Elements of matrix: " << std::endl;
 	matr = new int[rows * columns];
 	for (int i = 0; i < rows; i++)
 	{
@@ -57,6 +48,23 @@ void matrix::input()
 		{
 			std::cin >> matr[i * columns + j];
 		}
+	}
+}
+
+void matrix::print()
+{
+	if ((columns != 0) && (rows != 0))
+	{
+		//std::cout << "Entered matrix: " << std::endl;
+		
+		for (int i = 0; i < rows; i++)
+		{
+			for (int j = 0; j < columns; j++)
+				std::cout << matr[i * columns + j] << " ";
+			std::cout << std::endl;
+		}
+
+		std::cout << std::endl;
 	}
 }
 
@@ -73,7 +81,8 @@ matrix matrix::sum(matrix matrtemp1, matrix matrtemp2)
 	}
 	else
 	{
-		std::cout << "Invalid." << std::endl;
+		std::cout << "Invalid size of matrixes." << std::endl;
+		return matrix(0, 0, matr);
 	}
 }
 
@@ -84,7 +93,7 @@ matrix matrix::multiple(matrix matrtemp1, matrix matrtemp2)
 		rows = matrtemp1.rows;
 		columns = matrtemp2.columns;
 
-		std::cout << rows << " " << columns << std::endl;
+		//std::cout << rows << " " << columns << std::endl;
 
 		matr = new int[(rows) * (columns)];
 		for (int i = 0; i < (rows) * (columns); i++)
@@ -106,7 +115,8 @@ matrix matrix::multiple(matrix matrtemp1, matrix matrtemp2)
 	}
 	else
 	{
-		std::cout << "Invalid." << std::endl;
+		std::cout << "Invalid size of matrixes." << std::endl;
+		return matrix(0, 0, matr);
 	}
 }
 
@@ -144,7 +154,8 @@ matrix matrix::multiple_on_number(matrix matrtemp1, matrix matrtemp2)
 		return matrix(rows, columns, matr);
 		break;
 	default:
-		std::cout << "Invalid." << std::endl;
+		std::cout << "Invalid number of matrix." << std::endl;
+		return matrix(0, 0, matr);
 	}
 }
 
@@ -166,7 +177,7 @@ void matrix::track(matrix matrtemp1, matrix matrtemp2)
 		}
 		else
 		{
-			std::cout << "Invalid. " << std::endl;
+			std::cout << "Invalid size of matrix. " << std::endl;
 		}
 		break;
 	case 2:
@@ -177,11 +188,11 @@ void matrix::track(matrix matrtemp1, matrix matrtemp2)
 			std::cout << "Track: " << track_result << std::endl;
 		}
 		else
-		{
-			std::cout << "Invalid. " << std::endl;
+		{ 
+			std::cout << "Invalid size of matrix. " << std::endl;
 		}
 		break;
 	default:
-		std::cout << "Invalid." << std::endl;
+		std::cout << "Invalid number of matrix." << std::endl;
 	}
 }

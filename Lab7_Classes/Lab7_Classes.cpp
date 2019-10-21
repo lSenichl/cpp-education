@@ -10,7 +10,10 @@ int main()
 
 	matr1.input();
 	matr2.input();
+
+	std::cout << "Entered matrix №1: " << std::endl;
 	matr1.print();
+	std::cout << "Entered matrix №2: " << std::endl;
 	matr2.print();
 	
 	matrix resmatr;
@@ -32,14 +35,17 @@ int main()
 	{
 	case 1:
 		resmatr.sum(matr1, matr2);
+		std::cout << "Result matrix: " << std::endl;
 		resmatr.print();
 		break;
 	case 2:
 		resmatr.multiple(matr1, matr2);
+		std::cout << "Result matrix: " << std::endl;
 		resmatr.print();
 		break;
 	case 3:
 		resmatr.multiple_on_number(matr1, matr2);
+		std::cout << "Result matrix: " << std::endl;
 		resmatr.print();
 		break;
 	case 4:

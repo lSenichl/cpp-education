@@ -2,9 +2,11 @@
 class matrix
 {
 private:
-	
+	int rows;
+	int columns;
+	int* matr;
+
 public:
-	
 	matrix();
 	~matrix();
 
@@ -12,6 +14,10 @@ public:
 
 	void print();
 	void input();
+
+	int getrows();
+	int getcolumns();
+	int * getmatr();
 
 	matrix sum(matrix matrtemp1, matrix matrtemp2);
 
@@ -22,8 +28,9 @@ public:
 	void track(matrix matrtemp1, matrix matrtemp2);
 
 protected:
-	int rows;
+	/*int rows;
 	int columns;
-	int* matr;
+	int* matr;*/
+
 };
 
