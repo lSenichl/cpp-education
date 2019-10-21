@@ -28,9 +28,6 @@ public:
 	void track(matrix matrtemp1, matrix matrtemp2);
 
 protected:
-	/*int rows;
-	int columns;
-	int* matr;*/
-
+	
 };
 
