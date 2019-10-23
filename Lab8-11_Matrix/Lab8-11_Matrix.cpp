@@ -40,5 +40,15 @@ int main()
 	resmatr.print();
 	std::cout << std::endl;
 
-	//matr1<<matr1;
+	std::cout << "matr1 * q = " << std::endl;
+	resmatr = ++matr1;
+	resmatr.print();
+	std::cout << std::endl;
+
+	std::cout << "matr2 * q = " << std::endl;
+	resmatr = ++matr2;
+	resmatr.print();
+	std::cout << std::endl;
+
+	//std::cout << matr1 << std::endl;
 }

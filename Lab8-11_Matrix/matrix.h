@@ -23,9 +23,10 @@ public:
 	friend matrix operator- (matrix matrtemp1, matrix matrtemp2);
 	friend matrix operator-- (matrix matrtemp);
 	friend matrix operator* (matrix matrtemp1, matrix matrtemp2);
-	//friend matrix operator** (matrix matrtemp1, int k;
+	friend matrix operator++ (matrix matrtemp); 
 	//friend matrix operator= (matrix matrtemp1, matrix matrtemp2);
 	//friend std::iostream & operator << (std::iostream& os, matrix matrtemp);
+	//friend std::ostream& operator<< (std::ostream out, matrix matrtemp);
 protected:
 
 };

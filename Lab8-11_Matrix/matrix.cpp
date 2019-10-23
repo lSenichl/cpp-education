@@ -74,9 +74,9 @@ matrix operator+(matrix matrtemp1, matrix matrtemp2)
 		result.rows = matrtemp1.getrows();
 		result.columns = matrtemp1.getcolumns();
 		result.matr = new int[result.rows * result.columns];
-		for (int i = 0; i < result.rows * result.columns; i++)
-			result.matr[i] = matrtemp2.matr[i] + matrtemp1.matr[i];
-		return matrix(result.rows, result.columns, result.matr);
+		for (int i = 0; i < result.getrows() * result.getcolumns(); i++)
+			result.matr[i] = matrtemp2.getmatr()[i] + matrtemp1.getmatr()[i];
+		return matrix(result.getrows(), result.getcolumns(), result.matr);
 	}
 	else
 	{
@@ -150,8 +150,24 @@ matrix operator*(matrix matrtemp1, matrix matrtemp2)
 		return matrix(0, 0, matr);
 	}
 }
+matrix operator++(matrix matrtemp)
+{
+	/*std::cout << "Multiplier: " << std::endl;
+	int matrix_q;
+	std::cin >> matrix_q;*/
 
-//std::iostream& operator<<(std::iostream& os, matrix matrtemp)
+	int rows = matrtemp.getrows();
+	int columns = matrtemp.getcolumns();
+
+	int *matr = new int[rows * columns];
+
+	for (int i = 0; i < rows * columns; i++)
+		matr[i] = matrtemp.getmatr()[i] * 3;
+
+	return matrix(rows, columns, matr);
+}
+//
+//std::ostream operator<< (std::ostream out, matrix matrtemp)
 //{
 //	if ((matrtemp.getcolumns != 0) && (matrtemp.getrows != 0))
 //	{
