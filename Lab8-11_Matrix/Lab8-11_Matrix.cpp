@@ -50,5 +50,5 @@ int main()
 	resmatr.print();
 	std::cout << std::endl;
 
-	//std::cout << matr1 << std::endl;
+	std::cout << matr1 << std::endl;
 }

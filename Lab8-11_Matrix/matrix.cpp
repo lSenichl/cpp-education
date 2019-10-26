@@ -1,6 +1,5 @@
 #include "matrix.h"
 #include <iostream>
-#include <iostream>
 
 matrix::matrix()
 {
@@ -152,9 +151,9 @@ matrix operator*(matrix matrtemp1, matrix matrtemp2)
 }
 matrix operator++(matrix matrtemp)
 {
-	/*std::cout << "Multiplier: " << std::endl;
+	std::cout << "Multiplier: " << std::endl;
 	int matrix_q;
-	std::cin >> matrix_q;*/
+	std::cin >> matrix_q;
 
 	int rows = matrtemp.getrows();
 	int columns = matrtemp.getcolumns();
@@ -162,9 +161,23 @@ matrix operator++(matrix matrtemp)
 	int *matr = new int[rows * columns];
 
 	for (int i = 0; i < rows * columns; i++)
-		matr[i] = matrtemp.getmatr()[i] * 3;
+		matr[i] = matrtemp.getmatr()[i] * matrix_q;
 
 	return matrix(rows, columns, matr);
+}
+std::ostream& operator<<(std::ostream& out, matrix matrtemp)
+{
+	if ((matrtemp.columns != 0) && (matrtemp.getrows() != 0))
+	{
+		for (int i = 0; i < matrtemp.getrows(); i++)
+		{
+			for (int j = 0; j < matrtemp.columns; j++)
+				out << matrtemp.matr[i * matrtemp.columns + j] << " ";
+			out << std::endl;
+		}
+		out << std::endl;
+	}
+	return out;
 }
 //
 //std::ostream operator<< (std::ostream out, matrix matrtemp)

@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+
 class matrix
 {
 private:
@@ -27,7 +29,8 @@ public:
 	//friend matrix operator= (matrix matrtemp1, matrix matrtemp2);
 	//friend std::iostream & operator << (std::iostream& os, matrix matrtemp);
 	//friend std::ostream& operator<< (std::ostream out, matrix matrtemp);
+	
+	friend std::ostream& operator << (std::ostream& out, matrix matrtemp);
 protected:
 
 };
-
