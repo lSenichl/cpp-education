@@ -3,8 +3,8 @@
 
 int main()
 {
-	matrix matr1, matr2;
-
+	matrix<int> matr1, matr2;
+	/*
 	matr1.input();
 	matr2.input();
 
@@ -13,7 +13,7 @@ int main()
 	std::cout << "Entered matrix 2: " << std::endl;
 	matr2.print();
 
-	matrix resmatr;
+	matrix<int> resmatr;
 
 	std::cout << "matr1 + matr2 = " << std::endl;
 	resmatr = matr1 + matr2;
@@ -51,4 +51,8 @@ int main()
 	std::cout << std::endl;
 
 	std::cout << matr1 << std::endl;
+	
+	std::cout << "qwertyu\n";
+	return 0;
+	*/
 }

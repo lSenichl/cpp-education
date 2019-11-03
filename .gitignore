@@ -4,6 +4,7 @@
 #*/debug
 #*/x64
 #*.gitignore
+*.vcxproj*
 
 
 # Created by https://www.gitignore.io/api/visualstudio
