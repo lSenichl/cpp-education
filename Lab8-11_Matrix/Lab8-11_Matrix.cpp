@@ -4,7 +4,7 @@
 int main()
 {
 	matrix<int> matr1, matr2;
-	/*
+	
 	matr1.input();
 	matr2.input();
 
@@ -49,10 +49,5 @@ int main()
 	resmatr = ++matr2;
 	resmatr.print();
 	std::cout << std::endl;
-
-	std::cout << matr1 << std::endl;
 	
-	std::cout << "qwertyu\n";
-	return 0;
-	*/
 }
