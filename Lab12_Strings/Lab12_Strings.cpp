@@ -12,5 +12,5 @@ int main()
 	file.file();
 	file.extension();
 	file.length();
-
+	file.copy();
 }

@@ -150,5 +150,56 @@ void Files::length()
 
 void Files::copy()
 {
+	std::ifstream oldFile;
+	std::fstream newFile;
+	std::string buffer;
+
+	std::string nameOfFile;
+	std::string extensionOfFile;
+
+	int pos, pos1, pos2;
+
+	switch (typeOfWay)
+	{
+	case 1:
+		nameOfFile = fullWayToFile;
+
+		pos1 = nameOfFile.rfind('.');
+		nameOfFile.resize(pos1);
+		pos2 = nameOfFile.rfind('\\');
+		nameOfFile = nameOfFile.substr(pos2 + 1, pos1 - pos2);
+
+		extensionOfFile = fullWayToFile;
+
+		pos = extensionOfFile.rfind('.');
+		extensionOfFile = extensionOfFile.substr(pos);
+
+
+		oldFile.open(fullWayToFile, std::fstream::out);
+		oldFile >> buffer;
+		newFile.open(nameOfFile + "_copy" + extensionOfFile, std::fstream::out);
+		newFile << buffer;
+		oldFile.close();
+		newFile.close();
+		break;
+	case 2:
+		nameOfFile = onlyFile;
+		pos = nameOfFile.rfind('.');
+		nameOfFile.resize(pos);
+
+		extensionOfFile = onlyFile;
+
+		pos = extensionOfFile.rfind('.');
+		extensionOfFile = extensionOfFile.substr(pos);
+
+
+		oldFile.open(onlyFile, std::fstream::out);
+		oldFile >> buffer;
+		newFile.open(nameOfFile + "_copy" + extensionOfFile, std::fstream::out);
+		newFile << buffer;
+		oldFile.close();
+		newFile.close();
+		break;
+	}
 }
 
