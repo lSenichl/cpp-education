@@ -13,19 +13,22 @@ Files::~Files()
 
 void Files::in()
 {
-	std::cout << "Enter type of way (1 - full, 2 - only name of file): " << std::endl;
-	std::cin >> typeOfWay;
-	switch (typeOfWay)
+	std::cout << "Enter the way: " << std::endl;
+	std::string tempWay;
+	std::cin >> tempWay;
+	int pos = tempWay.rfind('\\');
+	
+	if (pos == -1)
 	{
-	case 1:
-		std::cout << "Enter way to file in format: C:\\Users\\User\\Desktop\\img\\img.png." << std::endl;
-		std::cin >> fullWayToFile;
-		break;
-	case 2:
-		std::cout << "Enter name of file in format: img.png." << std::endl;
-		std::cin >> onlyFile;
-		break;
+		typeOfWay = 2;
+		onlyFile = tempWay;
 	}
+	else
+	{
+		typeOfWay = 1;
+		fullWayToFile = tempWay;
+	}
+	
 	std::cout << std::endl;
 }
 
@@ -176,9 +179,13 @@ void Files::copy()
 
 
 		oldFile.open(fullWayToFile, std::fstream::out);
-		oldFile >> buffer;
 		newFile.open(nameOfFile + "_copy" + extensionOfFile, std::fstream::out);
-		newFile << buffer;
+
+		while (getline(oldFile, buffer))
+		{
+			newFile << buffer;
+		}
+
 		oldFile.close();
 		newFile.close();
 		break;
