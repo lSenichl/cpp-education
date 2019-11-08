@@ -177,7 +177,6 @@ void Files::copy()
 		pos = extensionOfFile.rfind('.');
 		extensionOfFile = extensionOfFile.substr(pos);
 
-
 		oldFile.open(fullWayToFile, std::fstream::out);
 		newFile.open(nameOfFile + "_copy" + extensionOfFile, std::fstream::out);
 
@@ -199,11 +198,14 @@ void Files::copy()
 		pos = extensionOfFile.rfind('.');
 		extensionOfFile = extensionOfFile.substr(pos);
 
-
 		oldFile.open(onlyFile, std::fstream::out);
-		oldFile >> buffer;
 		newFile.open(nameOfFile + "_copy" + extensionOfFile, std::fstream::out);
-		newFile << buffer;
+
+		while (getline(oldFile, buffer))
+		{
+			newFile << buffer;
+		}
+
 		oldFile.close();
 		newFile.close();
 		break;
