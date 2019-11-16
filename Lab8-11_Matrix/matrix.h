@@ -10,69 +10,20 @@ private:
 	mytype* matr;
 
 public:
-	matrix() 
-	{
-	}
-	
-	~matrix() 
-	{
-	}
-	
-	matrix(int trows, int tcolumns, mytype* tmatr)
-	{
-		rows = trows;
-		columns = tcolumns;
-		matr = new mytype[rows * columns];
-		for (int i = 0; i < rows * columns; i++)
-			matr[i] = tmatr[i];
-	}
+	matrix();
+	~matrix();
 
-	int getrows()
-	{
-		return rows;
-	}
+	matrix(int trows, int tcolumns, mytype* tmatr);
 
-	int getcolumns()
-	{
-		return columns;
-	}
+	int getrows();
 
-	mytype* getmatr()
-	{
-		return matr;
-	}
+	int getcolumns();
 
-	void input()
-	{
-		std::cout << "Number of rows: ";
-		std::cin >> rows;
-		std::cout << "Number of columns: ";
-		std::cin >> columns;
-		std::cout << "Elements of matrix: " << std::endl;
-		matr = new mytype[rows * columns];
-		for (int i = 0; i < rows; i++)
-		{
-			for (int j = 0; j < columns; j++)
-			{
-				std::cin >> matr[i * columns + j];
-			}
-		}
-		std::cout << std::endl;
-	}
+	mytype* getmatr();
 
-	void print()
-	{
-		if ((columns != 0) && (rows != 0))
-		{
-			for (int i = 0; i < rows; i++)
-			{
-				for (int j = 0; j < columns; j++)
-					std::cout << matr[i * columns + j] << " ";
-				std::cout << std::endl;
-			}
-			std::cout << std::endl;
-		}
-	}
+	void input();
+
+	void print();
 
 	friend matrix<mytype> operator+(matrix<mytype> matrtemp1, matrix<mytype> matrtemp2)
 	{
@@ -190,21 +141,7 @@ public:
 		}
 		return out;
 	}
-	/*
-	void print();
-	void input();
 
-	int getrows();
-	int getcolumns();
-	mytype* getmatr();
-
-	friend matrix operator+ (matrix matrtemp1, matrix matrtemp2);
-	friend matrix operator- (matrix matrtemp1, matrix matrtemp2);
-	friend matrix operator-- (matrix matrtemp);
-	friend matrix operator* (matrix matrtemp1, matrix matrtemp2);
-	friend matrix operator++ (matrix matrtemp); 
-	friend std::ostream& operator << (std::ostream& out, matrix matrtemp);
-	*/
 protected:
 
 };
