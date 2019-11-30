@@ -15,7 +15,7 @@ public:
 	void cancel();
 	bool checkEnd();
 	void print();
-	void checkMove();
+	bool checkMove(bool tempMove);
 	void queue();
 
 };

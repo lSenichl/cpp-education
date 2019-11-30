@@ -47,7 +47,7 @@ void Game::move()
 			rightMove = false;
 			break;
 		default:
-			if (field[tempMove - 49] == tempMove)
+			if (checkMove(tempMove))
 			{
 				if (player == 1)
 				{
@@ -171,9 +171,16 @@ void Game::print()
 	std::cout << std::endl;
 }
 
-void Game::checkMove()
+bool Game::checkMove(bool tempMove)
 {
-
+	if (field[tempMove - 49] != tempMove)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 void Game::queue()
