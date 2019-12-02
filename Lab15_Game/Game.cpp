@@ -115,39 +115,39 @@ bool Game::checkEnd()
 			temp += 1;
 		}
 	}
-	
-	if (temp == 9)
+
+	if (((field[0] == 'X') && (field[1] == 'X') && (field[2] == 'X')) ||
+		((field[3] == 'X') && (field[4] == 'X') && (field[5] == 'X')) ||
+		((field[6] == 'X') && (field[7] == 'X') && (field[8] == 'X')) ||
+		((field[0] == 'X') && (field[4] == 'X') && (field[8] == 'X')) ||
+		((field[2] == 'X') && (field[4] == 'X') && (field[6] == 'X')) ||
+		((field[0] == 'X') && (field[3] == 'X') && (field[6] == 'X')) ||
+		((field[1] == 'X') && (field[4] == 'X') && (field[7] == 'X')) ||
+		((field[2] == 'X') && (field[5] == 'X') && (field[8] == 'X')))
 	{
-		std::cout << "End of game." << std::endl;
-		std::cout << "Player" << player << "win." << std::endl;
+		std::cout << "Player 1 win." << std::endl;
 		return false;
 	}
 	else
 	{
-		if (((field[0] == 'X') && (field[1] == 'X') && (field[2] == 'X')) ||
-			((field[3] == 'X') && (field[4] == 'X') && (field[5] == 'X')) ||
-			((field[6] == 'X') && (field[7] == 'X') && (field[8] == 'X')) ||
-			((field[0] == 'X') && (field[4] == 'X') && (field[8] == 'X')) ||
-			((field[2] == 'X') && (field[4] == 'X') && (field[6] == 'X')) ||
-			((field[0] == 'X') && (field[3] == 'X') && (field[6] == 'X')) ||
-			((field[1] == 'X') && (field[4] == 'X') && (field[7] == 'X')) ||
-			((field[2] == 'X') && (field[5] == 'X') && (field[8] == 'X')))
+		if (((field[0] == 'O') && (field[1] == 'O') && (field[2] == 'O')) ||
+			((field[3] == 'O') && (field[4] == 'O') && (field[5] == 'O')) ||
+			((field[6] == 'O') && (field[7] == 'O') && (field[8] == 'O')) ||
+			((field[0] == 'O') && (field[4] == 'O') && (field[8] == 'O')) ||
+			((field[2] == 'O') && (field[4] == 'O') && (field[6] == 'O')) ||
+			((field[0] == 'O') && (field[3] == 'O') && (field[6] == 'O')) ||
+			((field[1] == 'O') && (field[4] == 'O') && (field[7] == 'O')) ||
+			((field[2] == 'O') && (field[5] == 'O') && (field[8] == 'O')))
 		{
-			std::cout << "Player 1 win." << std::endl;
+			std::cout << "Player 2 win." << std::endl;
 			return false;
 		}
 		else
 		{
-			if (((field[0] == 'O') && (field[1] == 'O') && (field[2] == 'O')) ||
-				((field[3] == 'O') && (field[4] == 'O') && (field[5] == 'O')) ||
-				((field[6] == 'O') && (field[7] == 'O') && (field[8] == 'O')) ||
-				((field[0] == 'O') && (field[4] == 'O') && (field[8] == 'O')) ||
-				((field[2] == 'O') && (field[4] == 'O') && (field[6] == 'O')) ||
-				((field[0] == 'O') && (field[3] == 'O') && (field[6] == 'O')) ||
-				((field[1] == 'O') && (field[4] == 'O') && (field[7] == 'O')) ||
-				((field[2] == 'O') && (field[5] == 'O') && (field[8] == 'O')))
+			if (temp == 9)
 			{
-				std::cout << "Player 2 win." << std::endl;
+				std::cout << "End of game." << std::endl;
+				std::cout << "Draw." << std::endl;
 				return false;
 			}
 			else
