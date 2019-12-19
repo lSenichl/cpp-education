@@ -7,6 +7,7 @@ int main()
 	
 	int sumEven = 0, sumUneven = 0, sumAll = 0, b = 0, c = 0, d = 0;
 	std::cin >> d;
+	int temp = d;
 
 	while (d > 0)
 	{
@@ -36,9 +37,9 @@ int main()
 	else
 		std::cout << "Сумма нечётных: " << sumUneven << std::endl;
 
-	std::cout << "Сумма всех чисел: " << sall << std::endl;
+	std::cout << "Сумма всех чисел: " << sumAll << std::endl;
 	
-	if (c = d)
+	if (c == temp)
 		std::cout << "Число является палиндромом." << std::endl;
 	else
 		std::cout << "Число не является палиндромом." << std::endl;

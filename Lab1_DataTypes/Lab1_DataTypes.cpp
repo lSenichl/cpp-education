@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include<locale.h> 
+#include <locale.h> 
 
 int main()
 {
@@ -20,5 +20,4 @@ int main()
 	std::cout << "x = " << b << " / " << a << std::endl;
 	x = b / a;
 	std::cout << "Ответ: " << x << "." << std::endl;
-
 }

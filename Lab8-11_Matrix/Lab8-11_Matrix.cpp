@@ -40,14 +40,19 @@ int main()
 	resmatr.print();
 	std::cout << std::endl;
 
+
+	std::cout << "Multiplier: " << std::endl;
+	int q;
+	std::cin >> q;
+
 	std::cout << "matr1 * q = " << std::endl;
-	resmatr = ++matr1;
+	resmatr = matr1*q;
 	resmatr.print();
 	std::cout << std::endl;
-
+	/*
 	std::cout << "matr2 * q = " << std::endl;
 	resmatr = ++matr2;
 	resmatr.print();
 	std::cout << std::endl;
-	
+	*/
 }
