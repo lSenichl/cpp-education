@@ -185,8 +185,8 @@ void Files::copy()
 			newFile << buffer;
 		}
 
-		//oldFile.close();
-		//newFile.close();
+		oldFile.close();
+		newFile.close();
 		break;
 	case 2:
 		nameOfFile = onlyFile;

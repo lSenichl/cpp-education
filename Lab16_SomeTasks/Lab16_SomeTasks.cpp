@@ -106,7 +106,7 @@ int task3()
 	return result;
 }
 
-std::string task4()
+void task4()
 {
 	std::cout << "Task 4." << std::endl;
 	
@@ -114,30 +114,38 @@ std::string task4()
 	std::cout << "Enter the value: ";
 	std::cin >> numb;
 	
-	std::vector<int> d{ 1 };
-	if (numb == 0)
-		return "1";
-	for (int i = 0; i < numb; i++)
-	{
-		d.push_back((long)d[i] * (long)(numb - i) / (i + 1));
-	}
-	std::string temp;
+	std::vector<int> v(numb+1,1);
 	
-	for (int i = 0; i < d.size(); i++)
+	int p = 0;
+	int n = 0;
+
+	for (int i = 0; i < numb + 1; ++i)
 	{
-		temp.push_back(d[i] + 48);
+		for (int j = 0; j < i; ++j)
+		{
+			p = v[j - 1];
+			if (n != 0)
+				p = n;
+			n = v[j];
+			v[j] = p + n;
+		}
+		n = 0;
 	}
-	return temp;
+
+	/*for (int i = 0; i < v.size(); i++)
+	{
+		std::cout << v[i] << " ";
+	}*/
 }
 
 int main()
 {
 
-	std::cout << task1() << std::endl;
+	//std::cout << task1() << std::endl;
 
-	std::cout << task2() << std::endl;
+	//std::cout << task2() << std::endl;
 
-	std::cout << task3() << std::endl;
+	//std::cout << task3() << std::endl;
 
-	std::cout << task4() << std::endl;
+	task4();
 }

@@ -112,9 +112,6 @@ int main()
 	std::copy(myList.begin(), myList.end(), std::ostream_iterator<std::string>(std::cout, " \n"));
 	std::cout << std::endl;
 
-	//swap
-	
-
 	//erase
 	std::cout << "myList.erase()" << std::endl;
 	myList.erase(myList.begin(), myList.end());
