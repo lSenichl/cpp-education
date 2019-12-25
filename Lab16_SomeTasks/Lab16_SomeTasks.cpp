@@ -114,28 +114,32 @@ void task4()
 	std::cout << "Enter the value: ";
 	std::cin >> numb;
 	
-	std::vector<int> v(numb+1,1);
-	
-	int p = 0;
-	int n = 0;
+	std::vector<int> myVect(numb + 1, 1);
 
-	for (int i = 0; i < numb + 1; ++i)
+	int prev = 0;
+	int next = 0;
+
+	for (int i = 0; i < numb + 1; ++i) 
 	{
-		for (int j = 0; j < i; ++j)
+		for (int j = 1; j < i; ++j) 
 		{
-			p = v[j - 1];
-			if (n != 0)
-				p = n;
-			n = v[j];
-			v[j] = p + n;
+			prev = myVect[j - 1];
+
+			if (next != 0)
+			{
+				prev = next;
+			}
+			next = myVect[j];
+			myVect[j] = prev + next;
 		}
-		n = 0;
+		next = 0;
+	}
+	
+	for (int i = 0; i < myVect.size(); i++)
+	{
+		std::cout << myVect[i] << " ";
 	}
 
-	/*for (int i = 0; i < v.size(); i++)
-	{
-		std::cout << v[i] << " ";
-	}*/
 }
 
 int main()
